@@ -7,3 +7,9 @@ if (!isNaN(number) && number >= 0 && number <= 10) {
         console.log(`${number} * ${i} = ${i*number}`)
     }
 }
+
+
+
+const array = [1, 2, 3, 4, 5]
+
+console.log(array)
