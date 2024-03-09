@@ -27,3 +27,18 @@ const item = {
 }
 
 item.calculatePrice()
+
+
+
+
+function makeAdder(x) {
+    return function (y) {
+        return x + y;
+    };
+}
+
+let addTwo = makeAdder(2);
+let addFive = makeAdder(5);
+
+console.log(addTwo(3)); // выведет 5
+console.log(addFive(7))
