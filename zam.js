@@ -38,24 +38,24 @@
 
 
 
-function once(fn) {
-    let  hasBeenValled = false 
-    let cachedResult;
+// function once(fn) {
+//     let  hasBeenValled = false 
+//     let cachedResult;
 
-    return function(...args) {
-        if (hasBeenValled) return cachedResult;
+//     return function(...args) {
+//         if (hasBeenValled) return cachedResult;
 
-        hasBeenValled = true;
-        cachedResult = fn(...args);
+//         hasBeenValled = true;
+//         cachedResult = fn(...args);
 
-        return cachedResult;
-    }
-}
+//         return cachedResult;
+//     }
+// }
 
-const addByTwoOnce = once(num => num + 2);
+// const addByTwoOnce = once(num => num + 2);
 
-console.log(addByTwoOnce(2));
-console.log(addByTwoOnce(5));
-console.log(addByTwoOnce(7));
+// console.log(addByTwoOnce(2));
+// console.log(addByTwoOnce(5));
+// console.log(addByTwoOnce(7));
 
 
