@@ -38,7 +38,7 @@
 
 
 
-function oncecreeate(fn) {
+function once(fn) {
     let  hasBeenValled = false 
     let cachedResult;
 
