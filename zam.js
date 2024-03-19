@@ -76,24 +76,25 @@ start()
 
 
 
-function once(fn) {
-    let  hasBeenValled = false 
-    let cachedResult;
-
-    return function(...args) {
-        if (hasBeenValled) return cachedResult;
-
-        hasBeenValled = true;
-        cachedResult = fn(...args);
-
-        return cachedResult;
-    }
-}
-
-const addByTwoOnce = once(num => num + 2);
-
-console.log(addByTwoOnce(2));
-console.log(addByTwoOnce(5));
-console.log(addByTwoOnce(7));
 
 
+
+// function once(fn) {
+//     let  hasBeenValled = false 
+//     let cachedResult;
+
+//     return function(...args) {
+//         if (hasBeenValled) return cachedResult;
+
+//         hasBeenValled = true;
+//         cachedResult = fn(...args);
+
+//         return cachedResult;
+//     }
+// }
+
+// const dfggg = once(num => num + 2);
+
+// console.log(addByTwoOnce(2));
+// console.log(addByTwoOnce(5));
+// console.log(addByTwoOnce(7));
