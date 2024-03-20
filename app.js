@@ -63,39 +63,39 @@
 
 
 
-function bind(context, fn) {
-    return function(...args) {
-        fn.apply(context, args)
-    }
-}
+// function bind(context, fn) {
+//     return function(...args) {
+//         fn.apply(context, args)
+//     }
+// }
 
 
-function logPerson() {
-    console.log(`Person: ${this.name}, ${this.age}, ${this.job}`);
-}
+// function logPerson() {
+//     console.log(`Person: ${this.name}, ${this.age}, ${this.job}`);
+// }
 
-const person1 = {name: '', age: 22, job: 'Frontend'}
-const person2 = {name: '', age: 19, job: 'SMM'}
-
-
-bind(person1, logPerson)()
-bind(person2, logPerson)()
+// const person1 = {name: '', age: 22, job: 'Frontend'}
+// const person2 = {name: '', age: 19, job: 'SMM'}
 
 
-function bind(context, fn) {
-    return function(...args) {
-        fn.apply(context, args)
-    }
-}
+// bind(person1, logPerson)()
+// bind(person2, logPerson)()
 
 
-function logPerson() {
-    console.log(`Person: ${this.name}, ${this.age}, ${this.job}`);
-}
+// function bind(context, fn) {
+//     return function(...args) {
+//         fn.apply(context, args)
+//     }
+// }
 
-const person11= {name: '', age: 22, job: 'Frontend'}
-const person21 = {name: '', age: 19, job: 'SMM'}
+
+// function logPerson() {
+//     console.log(`Person: ${this.name}, ${this.age}, ${this.job}`);
+// }
+
+// const person11= {name: '', age: 22, job: 'Frontend'}
+// const person21 = {name: '', age: 19, job: 'SMM'}
 
 
-bind(person1, logPerson)()
-bind(person2, logPerson)()
+// bind(person1, logPerson)()
+// bind(person2, logPerson)()
