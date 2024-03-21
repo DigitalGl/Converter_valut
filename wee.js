@@ -19,11 +19,11 @@ let arr = [
     },
 ]
 
-let result = arr.sort(function(a,b){
-    if (a > b) return -1;
-});
+const sortUsers = (arr, prop, dir = false) => arr.sort((a,b) => !dir ? a[prop] < b[prop] : a[prop] > b[prop] ? -1 : 1);
 
-console.log(result);
+
+
+console.log(sortUsers(arr, 'age', true));
 
 
 
