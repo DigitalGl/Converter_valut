@@ -38,7 +38,7 @@
 
 
 
-// Задача на циклы нарисовать триугольник 
+// Задача на циклы нарисовать треугольник 
 
 
 // let lines = 7;
@@ -79,6 +79,22 @@ console.log(wordd)
 }
 
 
-
+// let wordd = "";
+// for(let i = 1; i < 8 ; i ++) {
+// wordd = wordd + "#"
+// console.log(wordd)
+// }let wordd = "";
+// for(let i = 1; i < 8 ; i ++) {
+// wordd = wordd + "#"
+// console.log(wordd)
+// }let wordd = "";
+// for(let i = 1; i < 8 ; i ++) {
+// wordd = wordd + "#"
+// console.log(wordd)
+// }let wordd = "";
+// for(let i = 1; i < 8 ; i ++) {
+// wordd = wordd + "#"
+// console.log(wordd)
+// }
 
 
