@@ -97,30 +97,53 @@
 
 //Функции-колбеки
 
-function calcSumm(numOne, numTwo, more, less) {
+// function calcSumm(numOne, numTwo, more, less) {
+//     let numSumm = numOne + numTwo;
+
+//     if (numSumm > 3) {
+//         more();
+//     } else {
+//         less();
+//     }
+// }
+
+// function showMoreMessage() {
+//     console.log('Больше чем 3');
+// }
+// function showLessMessage() {
+//     console.log('Меньше чем 3');
+// }
+// calcSumm(1, 5, showMoreMessage, showLessMessage);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Возврат результата
+
+function calcSumm(numOne, numTwo) {
+    
     let numSumm = numOne + numTwo;
 
-    if (numSumm > 3) {
-        more();
-    } else {
-        less();
-    }
+    // Возврат
+    return numSumm;
+
+    //Дальше код не выполняется
+
 }
+let funcRezult = calcSumm(1, 2);
 
-function showMoreMessage() {
-    console.log('Больше чем 3');
-}
-function showLessMessage() {
-    console.log('Меньше чем 3');
-}
-calcSumm(1, 5, showMoreMessage, showLessMessage);
-
-
-
-
-
-
-
+console.log(`Сумма: ${funcRezult}`);
 
 
 
