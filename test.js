@@ -72,29 +72,15 @@
 
 
 
-let wordd = "";
-for(let i = 1; i < 8 ; i ++) {
-wordd = wordd + "#"
-console.log(wordd)
+for (let i = 0; i < 6; i++) {
+    console.log(i);
 }
 
 
-// let wordd = "";
-// for(let i = 1; i < 8 ; i ++) {
-// wordd = wordd + "#"
-// console.log(wordd)
-// }let wordd = "";
-// for(let i = 1; i < 8 ; i ++) {
-// wordd = wordd + "#"
-// console.log(wordd)
-// }let wordd = "";
-// for(let i = 1; i < 8 ; i ++) {
-// wordd = wordd + "#"
-// console.log(wordd)
-// }let wordd = "";
-// for(let i = 1; i < 8 ; i ++) {
-// wordd = wordd + "#"
-// console.log(wordd)
-// }
+let k = 0;
+while (k < 5) {
+    console.log('k: ' + k);
+    k++;
+}
 
 
