@@ -107,16 +107,83 @@ const { log } = require("console");
 
 // Object.assign(куда(обьект), что(свойство #1), что(свойтсво #2), ...);
 
-let userInfo = {
-    name: "Вася",
-    age: 30,
-}
+// let userInfo = {
+//     name: "Вася",
+//     age: 30,
+// }
 
-let user = Object.assign({}, userInfo);
+// Object.assign(userInfo, { [ 'likes javascript']: true, city: "Uzhhorod"});
+// console.log(userInfo);
 
-user.age = 18;
 
-console.log(userInfo);
-console.log(user);
-console.log(userInfo);
+
+
+
+
+
+
+// Оператор "in"
+
+// let userInfo = {
+//     name: "Вася",
+//     age: 30,
+//     address: {
+//         city: "Uzhhorod",
+//         street: "Freedom",
+//     }
+// }
+
+// if ("name" in userInfo) {
+//     console.log(userInfo.name);
+// }
+
+
+
+
+
+
+
+
+// let userInfo = {
+//     name: undefined,
+// }
+// if (userInfo.name) {
+//     console.log(userInfo.name);
+// }
+
+
+// if ("name" in userInfo) {
+//     console.log(userInfo.name);
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
