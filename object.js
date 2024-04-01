@@ -106,22 +106,17 @@ const { log } = require("console");
 // Изменение обьектов
 let userInfo = {
     name: "Вася",
+    age: 30,
+    "likes javascript": true,
 }
 
 console.log(userInfo);
 
-userInfo.age = 30;
+delete userInfo.age
 
 console.log(userInfo);
 
-userInfo['likes javascript'] = true;
-
-console.log(userInfo);
-
-userInfo.address = {
-    city: "Uzhhorod",
-    street: "Freedom",
-};
+delete userInfo["likes javascript"];
 
 console.log(userInfo);
 
