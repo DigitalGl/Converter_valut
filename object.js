@@ -103,26 +103,20 @@ const { log } = require("console");
 
 
 
-// Изменение обьектов
+
+
+// Object.assign(куда(обьект), что(свойство #1), что(свойтсво #2), ...);
+
 let userInfo = {
     name: "Вася",
     age: 30,
-    "likes javascript": true,
 }
 
-console.log(userInfo);
+let user = Object.assign({}, userInfo);
 
-delete userInfo.age
-
-console.log(userInfo);
-
-delete userInfo["likes javascript"];
+user.age = 18;
 
 console.log(userInfo);
-
-
-
-
-
-
+console.log(user);
+console.log(userInfo);
 
