@@ -156,7 +156,9 @@ const { log } = require("console");
 //     console.log(userInfo.name);
 // }
 
-
+if ("name" in userInfo) {
+    console.log(userInfo.name);
+}
 
 
 
