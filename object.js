@@ -144,32 +144,62 @@ const { log } = require("console");
 
 
 
+
+
+//Пример
+// Цикл for in
+
+
 // let userInfo = {
-//     name: undefined,
+//     name: "Вася",
+//     age: 30,
+//     address: {
+//         city: "Uzhhorod",
+//         street: "Freedom",
+//     }
 // }
-// if (userInfo.name) {
-//     console.log(userInfo.name);
+
+// // for (переменная in объект) {
+// //     выполняемый код
+// //  }
+
+// for ( let key in userInfo) {
+//     //ключи 
+//     console.log(key); //name, age, address
+//     //значения ключей
+//     console.log(userInfo[key]); //Вася, 30, Object {}
+// }
+
+// for (let key in userInfo.address) {
+//     //ключи
+//     console.log(key); // city, street
+//     //значения ключей
+//     console.log(userInfo.address[key]); // Uzhhorod, Freedom
 // }
 
 
-// if ("name" in userInfo) {
-//     console.log(userInfo.name);
-// }
 
-if ("name" in userInfo) {
-    console.log(userInfo.name);
+
+
+let userInfo = {
+    name: "Вася",
+    age: 30,
+    address: {
+        city: "Uzhhorod",
+        street: "Freedom",
+    },
+    showInfo: function () {
+        console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+    }
+
+//     showInfo() {
+//     console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+// }
 }
 
 
 
-
-
-
-
-
-
-
-
+userInfo.showInfo();
 
 
 
