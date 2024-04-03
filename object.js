@@ -181,25 +181,99 @@ const { log } = require("console");
 
 
 
-let userInfo = {
-    name: "Вася",
-    age: 30,
-    address: {
-        city: "Uzhhorod",
-        street: "Freedom",
-    },
-    showInfo: function () {
-        console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
-    }
 
+
+
+
+// Использование "this"
+
+// let userInfo = {
+//     name: "Вася",
+//     age: 30,
+//     address: {
+//         city: "Uzhhorod",
+//         street: "Freedom",
+//     },
 //     showInfo() {
-//     console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+//         function show() {
+//             console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
+//         }
+//         // у стрелочной функции нет своего "this" использукется
+//         // значения из внешнего метода userInfo.showInfo()
+//         // let show = () => console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
+
+//         show();
+//     }
 // }
+
+// userInfo.showInfo();
+
+
+
+
+
+
+
+
+
+// let userInfo = {
+//     name: "Вася",
+//     age: 30,
+//     address: {
+//         city: "Uzhhorod",
+//         street: "Freedom",
+//     },
+//     showInfo() {
+//         console.log(`${this.name}, ${this.age} лет. Адрес: г.${this.address.city}, ул.${this.address.street}`);
+//         // console.log(`${userInfo.name}, ${userInfo.age} лет. Адрес: г.${userInfo.address.city}, ул.${userInfo.address.street}`);
+//     }
+// }
+// userInfo.showInfo();
+
+// let user = userInfo;
+// userInfo = null;
+// user.showInfo();
+
+
+
+
+
+
+
+// Функция - конструктор
+
+/*
+Обычный синтаксис создания обьекта {... } позволяет создать 
+только один обьект. Но зачастую нам нужно создать множество 
+аднотипных обьектов, таких как пользователи, элементы меню и т.д.
+Это можно сделать при помощи функции - конструктора и оператора "new"
+*/
+
+/*
+Функции - конструкторы являются обычными функциями.
+Но есть два правила:
+1)Имя функции - конструктора должно начинаться с большой буквы.
+2)Функция - конструктор должна вызываться при помощи оператора "new"
+*/
+
+function UserInfo(name) {
+
+    // this = {}; Создается пустой обьект (неявно)
+
+    this.name = name;
+    this.age = 30;
+
+    // return this; Возврощается обьект (неявно)
 }
 
+console.log(new UserInfo('Вася'));
+console.log(new UserInfo('Лена'));
 
 
-userInfo.showInfo();
+
+
+
+
 
 
 
