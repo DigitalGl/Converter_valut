@@ -351,14 +351,14 @@
 // showMessage(); // Error (showMessage is not defined)
 
 //Решение
-let showMessage
+// let showMessage
 
-if (2 > 1) {
-	showMessage = function () {
-		console.log('Сообщение');
-	}
-}
-showMessage();
+// if (2 > 1) {
+// 	showMessage = function () {
+// 		console.log('Сообщение');
+// 	}
+// }
+// showMessage();
 
 
 
