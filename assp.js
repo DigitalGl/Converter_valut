@@ -1,13 +1,47 @@
+function quantitiesByCategories(products) {
+    return products.reduce((qtysByCategories, product) => {
+        const { category, quantity } = product
+        qtysByCategories[product.category] =
+            (qtysByCategories[product.category] || 0) + product.quantity
+
+        return qtysByCategories
+    }, {})
+}
 
 
-let arr = ['Олеся', 'Ян', 'Аня', 'Влад', 'Ира']
+const inputProducts = [
+    {
+        title: 'Phone case',
+        price: 23,
+        quantity: 2,
+        category: 'Accessories',
+    },
+    {
+        title: 'Android phone',
+        price: 150,
+        quantity: 1,
+        category: 'Phones',
+    },
+    {
+        title: 'Headphones',
+        price: 78,
+        quantity: 1,
+        category: 'Accessories',
+    },
+    {
+        title: 'Sport Watch',
+        price: 55,
+        quantity: 2,
+        category: 'Watches',
+    },
+]
+
+console.log(quantitiesByCategories(inputProducts))
+/* {
+    Accessories: 3,
+    Phones: 1,
+    Watches: 2
+} */
 
 
-// let arr = [4, 6, 1, 12, 9, 8];
-
-let result = arr.sort(function(a, b) {
-    if (a < b) return -1;
-})
-
-console.log(result);
-
+console.log(5 || 0);
