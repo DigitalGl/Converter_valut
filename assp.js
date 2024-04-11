@@ -1,47 +1,34 @@
-function quantitiesByCategories(products) {
-    return products.reduce((qtysByCategories, product) => {
-        const { category, quantity } = product
-        qtysByCategories[product.category] =
-            (qtysByCategories[product.category] || 0) + product.quantity
-
-        return qtysByCategories
-    }, {})
-}
-
-
-const inputProducts = [
+const inputPosts = [
     {
-        title: 'Phone case',
-        price: 23,
-        quantity: 2,
-        category: 'Accessories',
+        title: 'Как быстро выучить JavaScript?',
+        postId: 3421,
+        comments: 25,
     },
     {
-        title: 'Android phone',
-        price: 150,
-        quantity: 1,
-        category: 'Phones',
+        title: 'Где используется JavaScript?',
+        postId: 5216,
+        comments: 3,
     },
     {
-        title: 'Headphones',
-        price: 78,
-        quantity: 1,
-        category: 'Accessories',
-    },
-    {
-        title: 'Sport Watch',
-        price: 55,
-        quantity: 2,
-        category: 'Watches',
+        title: 'Какая разница между React и Angular?',
+        postId: 8135,
+        comments: 12,
     },
 ]
 
-console.log(quantitiesByCategories(inputProducts))
-/* {
-    Accessories: 3,
-    Phones: 1,
-    Watches: 2
-} */
+function popularPostsIds(posts, minimalComentsQty) {
+    return posts.reduce(
+        (postsIds, post) =>
+            post.comments >= minimalComentsQty
+                ? postsIds.concat([post.postId])
+                : postsIds,
+        []
+    )
+}
 
 
-console.log(5 || 0);
+console.log(popularPostsIds(inputPosts, 10)) // [3421, 8135]
+
+console.log(popularPostsIds(inputPosts, 15)) // [3421]
+
+console.log(popularPostsIds(inputPosts, 50)) // []
