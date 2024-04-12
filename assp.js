@@ -1,34 +1,35 @@
-const inputPosts = [
-    {
-        title: 'Как быстро выучить JavaScript?',
-        postId: 3421,
-        comments: 25,
-    },
-    {
-        title: 'Где используется JavaScript?',
-        postId: 5216,
-        comments: 3,
-    },
-    {
-        title: 'Какая разница между React и Angular?',
-        postId: 8135,
-        comments: 12,
-    },
-]
+function isElementInArray(searchElement, inputArray) {
+    if (typeof searchElement !== 'object') {
+        return inputArray.includes(searchElement)
+    }
 
-function popularPostsIds(posts, minimalComentsQty) {
-    return posts.reduce(
-        (postsIds, post) =>
-            post.comments >= minimalComentsQty
-                ? postsIds.concat([post.postId])
-                : postsIds,
-        []
-    )
+    return inputArray
+        .map((element) => JSON.stringify(element))
+        .includes(JSON.stringify(searchElement))
+
 }
 
 
-console.log(popularPostsIds(inputPosts, 10)) // [3421, 8135]
+const tags = [
+    ['javascript', 'es6'],
+    ['css', 'flexbox'],
+    ['html', 'web-browser'],
+]
 
-console.log(popularPostsIds(inputPosts, 15)) // [3421]
+const fruits = [
+    { title: 'Orange', quantity: 10 },
+    { title: 'Banana', quantity: 5 },
+    { title: 'Apple', quantity: 25 },
+]
 
-console.log(popularPostsIds(inputPosts, 50)) // []
+const primitiveTypesArray = [25, 'x', true, undefined, null]
+
+console.log(isElementInArray(['css', 'flexbox'], tags)) // true
+
+console.log(isElementInArray(['flexbox', 'css'], tags)) // false
+
+console.log(isElementInArray({ title: 'Apple', quantity: 25 }, fruits)) // true
+
+console.log(isElementInArray({ title: 'Banana' }, fruits)) // false
+
+console.log(isElementInArray(25, primitiveTypesArray)) // true
