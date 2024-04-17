@@ -1,13 +1,11 @@
 
 
 
-for (let i = 0; i < 6; i++) {
-    console.log(i);
-}
-
-while ( k < 5 ) {
-
-}
+(function sayHi() {
+	console.log('Привет, дорогой пользователь!');
+})()(function summ(a, b) {
+	console.log(a + b);
+})(10, 15);
 
 
 
