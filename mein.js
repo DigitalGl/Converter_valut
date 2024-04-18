@@ -3,3 +3,13 @@ function recurse() {
 }
 
 recurse();
+
+
+
+
+
+function recurse() {
+    recurse();
+}
+
+recurse();
