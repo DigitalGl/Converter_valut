@@ -24,6 +24,7 @@ const testDimension1 = "1920x1080"
 const testDimension2 = "1080x720"
 
 myDogPhoto.info()
+myDogPhoto.info()
 /* Фото "My dog" имеет разрешение 1920x1080 */
 
 setTimeout(() => myDogPhoto.publishInfo(), 2000)
