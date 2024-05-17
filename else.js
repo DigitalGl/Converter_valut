@@ -212,15 +212,13 @@
 
 
 
-//3 ложь
-let message = (92 > '11' && 58 < 100) ? 'Истина!' : 'Ложь!';
-console.log(message);
-
-
-// //4 истина
-if (0) {
-    console.log('Ложь!');
-} else if (" ") {
-    console.log('Истина!');
+class CustomArray extends Array {
+    customPush(newElement) {
+        this
+        console.log(`Новый элемент ${newElement} был только что добавлен в массив`)
+    }
 }
+
+const myCostomArray = new CustomArray(10, 3, 7, 5)
+myCostomArray.customPush(25)
 
