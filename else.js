@@ -220,5 +220,5 @@ class CustomArray extends Array {
 }
 
 const myCostomArray = new CustomArray(10, 3, 7, 5)
-myCostomArray.customPush(25)
+myCostomArray.customPush(27)
 
