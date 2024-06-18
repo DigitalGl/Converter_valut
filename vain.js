@@ -26,4 +26,4 @@ const fn = (list, item) => {
 arr = [1, 2, 0, 1, 4, 5, 7, 6, 8]
 
 
-// fn(arr)
+fn(arr)
