@@ -1,11 +1,29 @@
 
 
 
-const sayHi2 = (name) => {
-    console.log(`Привет, ${name}! Как твои дела?`);
-} 
+const fn = (list, item) => {
+    let low = 0;
+    let high = list.length - 1;
+
+    while (low <= high){
+        let mid = Math.floor((low + high) / 2);
+        let guess = list[mid];
+        if (guess === item) {
+            return mid;
+        }
+        if (guess > item) {
+            high = mid - 1;
+        }
+        if (guess < item) {
+            low = mid + 1;
+        }
+    }
+
+    return null;
+}
 
 
-sayHi2("Mark");
+arr = [1, 2, 0, 1, 4, 5, 7, 6, 8]
 
-console.log(sayHi2)
+
+// fn(arr)
