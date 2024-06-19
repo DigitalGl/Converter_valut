@@ -1,29 +1,7 @@
 
 
 
-const fn = (list, item) => {
-    let low = 0;
-    let high = list.length - 1;
-
-    while (low <= high){
-        let mid = Math.floor((low + high) / 2);
-        let guess = list[mid];
-        if (guess === item) {
-            return mid;
-        }
-        if (guess > item) {
-            high = mid - 1;
-        }
-        if (guess < item) {
-            low = mid + 1;
-        }
-    }
-
-    return null;
-}
-
-
-arr = [1, 2, 0, 1, 4, 5, 7, 6, 8]
-
-
-fn(arr)
+// Также есть следующие методы
+document.getElementsByClassName(); // Выбор колллекции элементов по CSS классу
+document.getElementsByTagName(); // Выбор коллекции элементов по тегу
+document.getElementsById(); // Выбор одного элемента по ID
