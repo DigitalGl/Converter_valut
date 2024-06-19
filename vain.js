@@ -1,15 +1,12 @@
 
 
 
-// Также есть следующие методы
-document.getElementsByClassName(); // Выбор колллекции элементов по CSS классу
-document.getElementsByTagName(); // Выбор коллекции элементов по тегу
-document.getElementsById(); // Выбор одного элемента по ID
+const timeID = setInterval(function () {
+    console.log('setInterval!');
+}, 1000);
 
 
 
-
-
-const button = document.querySelector('#button');
-button.setAttribute('value', 'Отправить');
-button.value = "Текст для кнопки";
+setTimeout(function () {
+    clearInterval(timeID)
+}, 10000);
