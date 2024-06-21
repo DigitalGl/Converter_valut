@@ -1,40 +1,71 @@
 
 
-// const array = 
-
-// const array = [
-//     395, -734, 300, -582, 597, 834, 89, 408, 517, -75, -616,
-//     -888, 461, -664, -528, 544, 207, -945, -67, 150, -780, -69,
-//     -334, -347, -863, 241, 700, 976, -741, 566, -165, -297, -130,
-//     -238, 510, 753, -82, -14, 128, -629, -499, 570, 440, -123,
-//     -394, -87, 870, -969, -925, 561, 892, 504, 364, 536, -379,
-//     717, 422, 238, -992, 906, -425, 535, -195, -291, 395, 2,
-//     -176, 554, -651, -687, 162, -394, -634, 204, -980, -765, -870,
-//     -691, -472, 753, 772, 778, 599, -297, 145, -365, 33, 138,
-//     -112, 265, -567, -909, 320, 528, 86, -936, -961, -847, -679,
-//     715
-// ]
+// =============== Callback.  Callback hell ==================
 
 
-const sorted = bubbleSort(Array(1000).fill(null).map(() => Math.floor (Math.random() * 2000) - 1000))
+// 1.Проверить номера в отеле
+// 2. Проверить билеты
 
-console.log(sorted);
 
-function bubbleSort (array) {
-    for (let n = 0; n < array.length; n++) {
-        for (let i = 0; i < array.length - 1 - n; i++) {
-            if (array[i] > array[i + 1]) {
-                const buff = array[i]
-                array[i] = array[i + 1]
-                array[i + 1] = buff
-            }
+
+function checkRooms(succses, failed) {
+    setTimeout(function() {
+        console.log('Проверяем номера в отеле...');
+        const availableRooms = true;
+        
+
+        if (availableRooms) {
+            let message = 'Номера есть!';
+            succses(message);
+        }else {
+            let message = 'Номеров НЕТ';
+            failed(message)
         }
-    }
-    
-
-    return array 
+    }, 1000)
 }
 
+
+function checkTickets(message){
+    setTimeout(function(){
+        console.log('---- function checkTikets -----');
+        console.log('Ответ на предыдущем шаге:', message);
+
+        console.log('Проверяем авиабилеты...');
+        const availableTickets = true;
+
+        if (availableTickets) {
+            let message = 'Билеты есть';
+            success(message);
+        } else {
+            let message = 'Билетов нет';
+            failed(message);
+        }
+
+    }, 500)
+}
+
+
+checkRooms(function(messageFromCheckRooms) {
+    sumbitVacation(messageFromCheckRooms)
+}, function(messageFromCheckRooms){
+    cancelVacation(messageFromCheckRooms)
+});
+
+
+
+
+function cancelVacation(message) {
+    console.log('---- cancelVacation -----');
+    console.log('Ответ на предыдущем шаге:', message);
+    console.log('Отпуск отменяется :(');
+}
+
+
+function sumbitVacation(message) {
+    console.log('---- sumbitVacation -----');
+    console.log('Ответ на предыдущем шаге:', message);
+    console.log('Едем в отпуск :)');
+}
 
 
 
