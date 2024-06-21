@@ -1,37 +1,59 @@
-const photosGallery = (title, dimensions, date) => {
-    return {
-        title,
-        date,
-        [dimensions]: true,
-        info() {
-            console.log(`Фото "${title}" имеет разрешение ${dimensions}`)
-        },
-        publishInfo() {
-            console.log(
-                `Фото "${title}" было опубликовано ${Math.floor(
-                    (new Date().getTime() - date.getTime()) / 1000
-                )} секунды назад`
-            )
-        },
-    }
+checkRooms()           // Проверка номеров
+    .then(checkTickets)    // Проверка билетов
+    .then(success)         // Билеты есть
+    .catch(failed);        // Отпуск отменяется
+
+
+function checkRooms() {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Проверяем номера в отеле...");
+            const availableRooms = false;
+            console.log(availableRooms);
+
+            if (availableRooms) {
+                resolve("Номера есть!");
+            } else {
+                reject('Номеров нет.');
+            }
+
+        }, 1500)
+    })
 }
 
-const myDogPhoto = photosGallery("My dog", "1920x1080", new Date())
 
-const testDimension1 = "1920x1080"
-const testDimension2 = "1080x720"
-
-myDogPhoto.info()
-/* Фото "My dog" имеет разрешение 1920x1080 */
-
-setTimeout(() => myDogPhoto.publishInfo(), 2000)
-/* Фото "My dog" было опубликовано 2 секунды назад */
-
-/* ВОПРОС: Почему метод "publishInfo" все еще имеет доступ 
-к параметрам функции "photosGallery" (например "date")? */
-
-console.log(myDogPhoto[testDimension1]) // true
-console.log(myDogPhoto[testDimension2]) // undefined
+function checkTickets(data) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(() => {
+            console.log('------ then 1 ------');
+            console.log('ответ на предыдущем шаге:', data);
+            console.log('Проверяем авиабилеты...');
+            const availableTickets = true;
 
 
-// console.log(Object.keys(myDogPhoto))
+            if (availableTickets) {
+                let message = 'Билеты есть';
+                resolve(message);
+            } else {
+                let message = 'Билетов нет';
+                reject(message)
+            }
+
+
+        }, 1000)
+    });
+}
+
+
+function success(data) {
+    console.log('--- success ----');
+    console.log('Ответ на предыдущем шаге:', data);
+    console.log('Едем в отпуск! :)');
+}
+
+
+function failed(data) {
+    console.log('------ failed ------');
+    console.log('Ответ на предыдущем шаге:', data);
+    console.log('Отпуск отменяется :(');
+}
