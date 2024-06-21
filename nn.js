@@ -1,44 +1,31 @@
 
 
-const photosGallery = (title, dimensions, date) => {
-    return {
-        title,
-        date,
-        [dimensions]: true,
-        info() {
-            console.log(`Фото "${title}" имеет разрешение ${dimensions}`)
-        },
-        publishInfo() {
-            console.log(
-                `Фото "${title}" было опубликовано ${Math.floor(
-                    (new Date().getTime() - date.getTime()) / 1000
-                )} секунды назад`
-            )
-        },
-    }
-}
+myPromise.then(function (data) {
 
-const myDogPhoto = photosGallery("My dog", "1920x1080", new Date())
+    return new Promise(function(resolve, reject){
+        setTimeout(() => {
+            console.log('Then 1');
+            console.log(data);
 
-const testDimension1 = "1920x1080"
-const testDimension2 = "1080x720"
+            const response = false;
+            if (response) {
+                resolve('Data from then 1')
+            } else {
+                reject('Data from then 1')
+            }
+        }, 1000)
+    })
+}).then(function(data) {
 
-myDogPhoto.info()
-myDogPhoto.info()
-/* Фото "My dog" имеет разрешение 1920x1080 */
+    setTimeout(() => {
+        console.log('Then 2');
+        console.log(data);
+    })
 
-setTimeout(() => myDogPhoto.publishInfo(), 2000)
-/* Фото "My dog" было опубликовано 2 секунды назад */
-
-/* ВОПРОС: Почему метод "publishInfo" все еще имеет доступ 
-к параметрам функции "photosGallery" (например "date")? */
-
-console.log(myDogPhoto[testDimension1]) // true
-console.log(myDogPhoto[testDimension2]) // undefined
-
-
-// console.log(Object.keys(myDogPhoto))
-
+}).catch(function (data) {
+    console.log('Catch');
+    console.log(data);
+})
 
 
 
