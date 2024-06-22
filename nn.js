@@ -34,3 +34,6 @@ if (a === b) {
 
 
 
+setTimeout(() => {
+	console.log('Teng');
+})
