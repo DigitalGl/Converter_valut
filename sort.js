@@ -25,6 +25,9 @@ function checkRooms(succses, failed) {
 }
 
 
+
+
+
 function checkTickets(message){
     setTimeout(function(){
         console.log('---- function checkTikets -----');
@@ -71,3 +74,23 @@ function sumbitVacation(message) {
 
 
 
+
+
+
+
+
+
+// function checkRooms1(succses, failed) {
+//     setTimeout(function() {
+//         console.log('Проверяем номера в отеле...');
+//         const availableRooms = true;
+
+//         if (availableRooms) {
+//             let message = 'Номера есть!';
+//             succses(message);
+//         } else {
+//             let message = 'Номеров нет';
+//             failed(message);
+//         }
+//     }, 1000)
+// }
