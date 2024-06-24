@@ -98,3 +98,24 @@ const dfggg = once(num => num + 2);
 console.log(addByTwoOnce(2));
 console.log(addByTwoOnce(5));
 console.log(addByTwoOnce(7));
+
+
+
+
+class CustomArray extends Array {
+    customPush(newElement) {
+        console.log(this.length)
+        this[this.length] = newElement
+        console.log(this.length)
+        console.log(`Новый элемент ${newElement} был только что добавлен в массив`)
+    }
+}
+
+const myCostomArray = new CustomArray(10, 3, 7, 5)
+myCostomArray.customPush(25)
+
+console.log(myCostomArray);
+
+myCostomArray.push(30)
+
+console.log(myCostomArray);
