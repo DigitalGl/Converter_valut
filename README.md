@@ -1,3 +1,3 @@
 
 
-https://daniil360.github.io/converter_valut/
+https://digitalgl.github.io/Converter_valut/
