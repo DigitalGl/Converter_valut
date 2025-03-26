@@ -1,5 +1,6 @@
 .courses {
     display: flex;
+    flex-wrap: wrap; /* Добавляем перенос, если блоки не помещаются */
     margin-bottom: 15px;
 }
 
@@ -14,6 +15,8 @@
 .courses > * {
     margin-right: 5px;
     margin-left: 5px;
+    margin-bottom: 10px; /* Добавляем отступ снизу для переносов */
+    flex: 1 1 30%; /* Устанавливаем гибкую ширину для адаптивности */
 }
 
 .course-item-title {
@@ -32,4 +35,9 @@
 
 .course-item-value.bottom {
     color: rgb(19, 189, 61);
+}
+
+
+.footer__link {
+    margin: 0 15px;
 }

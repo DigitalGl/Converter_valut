@@ -1,101 +1,55 @@
+import { apiKey } from './config.js';
+
+// Получаем элементы DOM
+const input = document.getElementById('input');
+const result = document.getElementById('result');
+const fromSelect = document.getElementById('exampleFormControlSelect1');
+const toSelect = document.getElementById('select');
+const courseValues = document.querySelectorAll('.course-item-value');
 
 
+const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
-// function createCalcFunction(n) {
-//     return function() {
-//         console.log(1000 * n);
-//     }
-// }
+// Функция для получения курсов валют
+async function fetchExchangeRates() {
+    try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+        
+        // Обновляем курсы в интерфейсе
+        courseValues.forEach(item => {
+            const currency = item.getAttribute('data-value');
+            const rate = data.conversion_rates[currency];
+            item.textContent = rate ? rate.toFixed(2) : '--.--';
+        });
 
+        // Выполняем первую конвертацию
+        convertCurrency();
+    } catch (error) {
+        console.error('Ошибка при загрузке курсов:', error);
+        courseValues.forEach(item => item.textContent = 'Ошибка');
+    }
+}
 
-// const calc = createCalcFunction(42)
+// Функция конвертации валют
+function convertCurrency() {
+    const amount = parseFloat(input.value) || 0;
+    const fromCurrency = fromSelect.value;
+    const toCurrency = toSelect.value;
 
-// calc()
+    // Получаем курсы из элементов DOM
+    const fromRate = parseFloat(document.querySelector(`[data-value="${fromCurrency}"]`).textContent);
+    const toRate = parseFloat(document.querySelector(`[data-value="${toCurrency}"]`).textContent);
 
+    // Вычисляем результат
+    const resultValue = (amount / fromRate) * toRate;
+    result.value = isNaN(resultValue) ? '' : resultValue.toFixed(2);
+}
 
+// Слушатели событий
+input.addEventListener('input', convertCurrency);
+fromSelect.addEventListener('change', convertCurrency);
+toSelect.addEventListener('change', convertCurrency);
 
-
-
-
-
-
-
-
-
-
-// function createIncrementor(n) {
-//     return function(num) {
-//         return n + num;
-//     }
-// }
-
-// const addOne = createIncrementor(1)
-// const addTen = createIncrementor(10)
-
-// console.log(addOne(10));
-// console.log(addOne(41));
-
-// console.log(addTen(10));
-// console.log(addTen(41));
-
-
-
-
-
-
-
-// function urlGenerator(domain) {
-//     return function(url) {
-//         return `https://${url}.${domain}`
-//     }
-// }
-
-// const comUrl = urlGenerator('com')
-// const ruUrl = urlGenerator('ru')
-
-// console.log(comUrl('google'));
-// console.log(comUrl('youtube'));
-
-// console.log(ruUrl('youtube'));
-// console.log(ruUrl('vkontakte'));
-
-
-
-
-
-// function bind(context, fn) {
-//     return function(...args) {
-//         fn.apply(context, args)
-//     }
-// }
-
-
-// function logPerson() {
-//     console.log(`Person: ${this.name}, ${this.age}, ${this.job}`);
-// }
-
-// const person1 = {name: '', age: 22, job: 'Frontend'}
-// const person2 = {name: '', age: 19, job: 'SMM'}
-
-
-// bind(person1, logPerson)()
-// bind(person2, logPerson)()
-
-
-// function bind(context, fn) {
-//     return function(...args) {
-//         fn.apply(context, args)
-//     }
-// }
-
-
-// function logPerson() {
-//     console.log(`Person: ${this.name}, ${this.age}, ${this.job}`);
-// }
-
-// const person11= {name: '', age: 22, job: 'Frontend'}
-// const person21 = {name: '', age: 19, job: 'SMM'}
-
-
-// bind(person1, logPerson)()
-// bind(person2, logPerson)()
+// Загружаем курсы при запуске
+fetchExchangeRates();
