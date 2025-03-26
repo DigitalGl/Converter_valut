@@ -3,9 +3,6 @@
 
 A simple web-based currency converter built with HTML, CSS, and JavaScript. It allows users to convert between multiple currencies (USD, EUR, GBP, RUB, KZT, UAH) using real-time exchange rates fetched from the ExchangeRate-API.
 
-## Live Demo
-Check out the live version here: *((https://digitalgl.github.io/Converter_valut/))*
-
 ## Features
 - Convert between **USD, EUR, GBP, RUB, KZT, and UAH**.
 - Displays **current exchange rates** relative to USD.
