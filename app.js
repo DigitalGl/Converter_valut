@@ -1,4 +1,3 @@
-import { apiKey } from './config.js';
 
 // Получаем элементы DOM
 const input = document.getElementById('input');
@@ -7,7 +6,7 @@ const fromSelect = document.getElementById('exampleFormControlSelect1');
 const toSelect = document.getElementById('select');
 const courseValues = document.querySelectorAll('.course-item-value');
 
-
+const apiKey = 'f3a046c1f8d73ee9bcd53306';
 const apiUrl = `https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`;
 
 // Функция для получения курсов валют
